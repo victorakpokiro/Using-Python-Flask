@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{{url_for('.custom_files', filename='bootstrap/css/bootstrap.min.css')}}">
+    <style>
+        .article img {
+            width: 100%;
+            padding: 4px;
+            border-radius: 6px;
+            border: solid 1px #333;
+            height: 250px;
+            opacity: 0.6;
+        }
+        .article p {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            color: #888;
+            font-family: monospace;
+        }
+        .article {
+            border-bottom: dotted 1px #ccc;
+            margin: 25px;
+            padding-top: 10px;
+        }
+        .article h3 {
+            margin: 30px;
+            font-family: monospace, sans-serif;
+            color: #444;
+        }
+        
+        .center {
+            text-align: center;
+        }
+
+        .shift-down{
+            margin-top: 45px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">MYBlog
+            </a>  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('.index')}}"> Articles <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('.add_article')}}"> New </a>
+                  </li>
+                </ul> 
+            </div>
+        </nav>
+ 
+    </div>
+
+    {% block main %}{% endblock %}
+    
+    <div class="container">
+        <footer class="center">
+            <p>
+               custom footer 
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="{{url_for('.custom_files', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+
+</body>
+</html>
